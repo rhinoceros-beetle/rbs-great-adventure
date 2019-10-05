@@ -1,111 +1,62 @@
 const readlineSync = require('readline-sync');
+const questions = require('./questions.js')
 
-const question1 = function() {
+const house = require('./house.js')
+const rip = require('./rip.js')
+const croc = require('./croc.js')
+const snowflake = require('./snowflake.js')
+const bang = require('./bang.js')
+const questionMaster = function(questions, questionNumber) {
 
-    console.clear()
-
-    console.log("RB walk through the dark forest, eventually coming to a fork in the path.") 
-    console.log("Which direction should RB take?")
-    console.log("  a) Right")
-    console.log("  b) Left")
-
-    var answer = readlineSync.question();
-
-    if (answer == "a") {
-        console.log("RB chooses the path to the Right")
-        readlineSync.question("Press enter to continue");
-        question2()
-    } else if (answer == "b") {
-        console.log("RB chooses the path to the Left")
-        readlineSync.question("Press enter to continue");
-        question3()
-    } else {
-        console.log("You've killed RB by not making a choice!")
-    }
-
-}
-
-const question2 = function() {
-
-    console.clear()
-
-    console.log("there's a rock in RB's way") 
-    console.log("wich one should he do")
-    console.log("  a) climb over the rock")
-    console.log("  b) hit the rock with a hammer")
-
-    var answer = readlineSync.question();
-
-    if (answer == "a") {
-        console.log("RB chooses the path to the Right")
-        readlineSync.question("Press enter to continue");
-        question2()
-    } else if (answer == "b") {
-        console.log("RB chooses the path to the Left")
-        readlineSync.question("Press enter to continue");
-        question3()
-    } else {
-        console.log("You've killed RB by not making a choice!")
-    }
-} 
-
-
-const question3 = function() {
-
-    console.clear()
-
-    console.log("RB comes to a river") 
-    console.log("wich one should he do")
-    console.log("  a) swim across")
-    console.log("  b) find an other path")
-
-    var answer = readlineSync.question();
-
-    if (answer == "a") {
-        console.log("RB chooses to swim across")
-        readlineSync.question("Press enter to continue");
-        question2()
-    } else if (answer == "b") {
-        console.log("RB chooses to find another path")
-        readlineSync.question("Press enter to continue");
-        question3()
-    } else {
-        console.log("You've killed RB by not making a choice!")
-    }
-}
-
-
-const question4 = function() {
-
-    console.clear()
-
-    console.log("RB comes to a river") 
-    console.log("wich one should he do")
-    console.log("  a) swim across")
-    console.log("  b) find an other path")
-
-    var answer = readlineSync.question();
-
-    if (answer == "a") {
-        console.log("RB chooses to swim across")
-        readlineSync.question("Press enter to continue");
-        question5()
-    } else if (answer == "b") {
-        console.log("RB chooses to find another path")
-        readlineSync.question("Press enter to continue");
-        question4()
-    } else {
-        console.log("You've killed RB by not making a choice!")
-    }
-}
-
-const question5 = function() {
-
-    console.clear()
-
-    console.log("there are crocodils in the lake so RB dies") 
+    var question = questions[questionNumber]
     
+    console.clear()
 
-question1();
-console.log
+    console.log(question.scenario) 
 
+    if (question.isEnd) {
+        console.log();
+        if (question.picture == "croc") {
+            croc()
+            console.log()
+            
+         } else if (question.picture == "bang") {
+                bang() 
+
+         } else if (question.picture == "snowflake") {
+            snowflakes()
+
+        } else if (question.picture == "rip") {
+            rip()
+
+        } else if (question.picture == "house") {
+            house()
+
+        }console.log('THE END');
+    } else {
+
+        console.log(question.question)
+        console.log("  a) " + question.optionA)
+        console.log("  b) " + question.optionB)
+
+        var answer = readlineSync.question();
+
+        if (answer == "a") {
+            console.log()
+            console.log(question.choseAMessage)
+            console.log()
+            readlineSync.question("Press enter to continue");
+            questionMaster(questions, question.chooseAGotoQuestion)        
+        } else if (answer == "b") {
+            console.log()
+            console.log(question.choseBMessage)
+            console.log()
+            readlineSync.question("Press enter to continue");
+            questionMaster(questions, question.chooseBGotoQuestion)                
+        } else {
+            console.log("You've killed RB by not making a choice!")
+        }
+    }
+}
+
+questionMaster(questions, 0)
