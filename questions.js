@@ -15,10 +15,10 @@
 module.exports = [
     {
         questionNumber: 0,
-        scenario: "RB got lost in the wildernes eventualy coming to a fork in the path",
-        question: "wich direction should he take",
-        optionA: "right",
-        optionB: "left",
+        scenario: "RB wandering in the wildernes eventualy coming to a menesing fork in the path",
+        question: "Wich direction should he take",
+        optionA: "Right",
+        optionB: "Left",
         choseAMessage: "RB chooses the path to the Right",
         chooseAGotoQuestion: 1,
         choseBMessage: "RB chooses the path to the Left",
@@ -26,10 +26,10 @@ module.exports = [
     },
     {
         questionNumber: 1,
-        scenario: "after ten minutes of walking RB saw a bolder blocking his way",
-        question: "what should RB do",
-        optionA: "climb the bolder",
-        optionB: "hit the bolder whith a hammer",
+        scenario: "After ten minutes of walking RB saw a gargantuan bolder blocking his way",
+        question: "What should RB do",
+        optionA: "Climb the bolder",
+        optionB: "Hit the bolder whith a hammer",
         choseAMessage: "RB climbs the bolder",
         chooseAGotoQuestion: 5,
         choseBMessage: "RB hits the bolder with a hammer",
@@ -38,9 +38,9 @@ module.exports = [
     {
         questionNumber: 2,
         scenario: "RB walks a little until he comes to a river. He takes a sip it tastes good",
-        question: "what should RB do",
-        optionA: "swim",
-        optionB: "find another way around",
+        question: "What should RB do",
+        optionA: "Swim",
+        optionB: "Find another way around",
         choseAMessage: "RB swims across",
         chooseAGotoQuestion: 6,
         choseBMessage: "RB decides to find another way round",
@@ -48,10 +48,10 @@ module.exports = [
     },
     {
         questionNumber: 3,
-        scenario: " the bolder opens half way. theres a under ground stair case",
-        question: "should he...",
-        optionA: "take the staircase",
-        optionB: "hit the bolder with a hammer again",
+        scenario: " The bolder opens half way. theres a under ground stair case",
+        question: "hould he...",
+        optionA: "Take the staircase",
+        optionB: "Hit the bolder with a hammer again",
         choseAMessage: "RB takes the staircase",
         chooseAGotoQuestion: 11,
         choseBMessage: "RB hits the bolder with a hammer",
@@ -60,8 +60,8 @@ module.exports = [
     {
         questionNumber: 4,
         scenario: "RBs realy hungry he bumps into a berry tree",
-        question: "should he...",
-        optionA: "eat one",
+        question: "Should he...",
+        optionA: "Eat one",
         optionB: "keep walking",
         choseAMessage: "RB eats one there realy good he puts loads in his backpack",
         chooseAGotoQuestion: 7,
@@ -70,19 +70,21 @@ module.exports = [
     },
     {
         questionNumber: 5,
-        scenario: "there are some slippy spots RB slips and dies!!!!!!!!!!!!!!!!!!!!!!!!",
-        isEnd: true
+        scenario: "There are some slippy spots RB slips and dies!!!!!!!!!!!!!!!!!!!!!!!!",
+        isEnd: true,
+        picture:"rip"
     },
     {
         questionNumber: 6,
-        scenario: "in the river there are crocodiles they eat RB alive while he's swimming to the other side!!!!!!!!!!!!!!!!!!!!!",
-        isEnd: true 
+        scenario: "In the river there are crocodiles they eat RB alive while he's swimming to the other side!!!!!!!!!!!!!!!!!!!!!",
+        isEnd: true,
+        picture:"croc" 
     },
     {
         questionNumber: 7,
         scenario: "RB has to make a choice",
-        question: "should he...",
-        optionA: "stay there for ever",
+        question: "Should he...",
+        optionA: "Stay there for ever",
         optionB: "keep walking",
         choseAMessage: "RB chooses to stay there forever",
         chooseAGotoQuestion: 10,
@@ -97,16 +99,19 @@ module.exports = [
     {
         questionNumber: 9,
         scenario: "the sound is so loud it kills you!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-        isEnd: true
+        isEnd: true,
+        picture:"bang"
     },
     {
         questionNumber: 10,
         scenario: "winter comes RB dies off coldness!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-        isEnd: true
+        isEnd: true,
+        picture:"snowflake"
     },
     {
         questionNumber: 11,
         scenario: "RBs finally home",
-        isEnd: true
+        isEnd: true,
+        picture:"house"
     }
 ]

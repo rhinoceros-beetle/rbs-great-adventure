@@ -1,6 +1,11 @@
 const readlineSync = require('readline-sync');
 const questions = require('./questions.js')
 
+const house = require('./house.js')
+const rip = require('./rip.js')
+const croc = require('./croc.js')
+const snowflake = require('./snowflake.js')
+const bang = require('./bang.js')
 const questionMaster = function(questions, questionNumber) {
 
     var question = questions[questionNumber]
@@ -11,7 +16,23 @@ const questionMaster = function(questions, questionNumber) {
 
     if (question.isEnd) {
         console.log();
-        console.log('THE END');
+        if (question.picture == "croc") {
+            croc()
+            console.log()
+            
+         } else if (question.picture == "bang") {
+                bang() 
+
+         } else if (question.picture == "snowflake") {
+            snowflakes()
+
+        } else if (question.picture == "rip") {
+            rip()
+
+        } else if (question.picture == "house") {
+            house()
+
+        }console.log('THE END');
     } else {
 
         console.log(question.question)
