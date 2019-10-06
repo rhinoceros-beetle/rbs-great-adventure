@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 
 module.exports = () => {
-	console.log(chalk.yellow(
+	console.log(chalk.keyword('orange')(
 `                                  @                        
                          @        @                        
                         @@@      @@                        
