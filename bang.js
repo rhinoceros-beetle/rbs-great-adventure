@@ -1,5 +1,7 @@
+const chalk = require('chalk')
+
 module.exports = () => {
-	console.log(
+	console.log(chalk.yellow(
 `                                  @                        
                          @        @                        
                         @@@      @@                        
@@ -19,5 +21,5 @@ module.exports = () => {
               @@@@  @@@@@@@@@@@@@@@@@@@@@@@@@,@@@@*        
               @@    @    @@@(  @  @@@  @,  @@@    ,        
              @           (@        @@       @@             
-                                    &        %%`)
+                                    &        %%`))
 }
