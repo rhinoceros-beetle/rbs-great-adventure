@@ -7,6 +7,7 @@ const chalk = require('chalk')
 const questions = require('./questions.js')
 
 // these variables let us draw our pictures
+const title = require('./title.js')
 const hungry = require('./hungry.js')
 const house = require('./house.js')
 const rip = require('./rip.js')
@@ -24,8 +25,9 @@ const questionMaster = function(questions, questionNumber) {
     var question = questions[questionNumber]
     
     // clears the screen / console / terminal
+    console.log()
     console.clear()
-
+      
     // prints the question scenario on the screen, followed by a blank line
     console.log(question.scenario) 
     console.log()
@@ -100,5 +102,8 @@ const questionMaster = function(questions, questionNumber) {
     }
 }
 
+console.clear()
+title();
+readlineSync.question(chalk.gray("Press enter to start playing!"))
 // tell the questionMaster to ask the first question!
 questionMaster(questions, 0)
