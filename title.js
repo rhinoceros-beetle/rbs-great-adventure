@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const title = () => {
 
 
-	console.log(chalk.keyword('orange')(
+	console.log(chalk.bold.keyword('orange')(
 `
       ______    _______  __   _______    _______  ______    _______  _______  _______ 
      |    _ |  |  _    ||  | |       |  |       ||    _ |  |       ||   _   ||       |
@@ -24,7 +24,7 @@ const title = () => {
 }
 
 const rip = () => {
-	console.log(chalk.gray(
+	console.log(chalk.bold.gray(
 `                                    .(%///#&@@@@@@%*.                 
                                .&(................(@@#(%@@%             
                             /%......*(/,..........#@&*@@#((#@@/         
@@ -57,9 +57,10 @@ console.log()
 console.log()
 
 rip()
-console.log()
-console.log()
-console.log()
-
-console.log('                      Play it online at '+chalk.bold.cyan(process.argv[2]))
+if (process.argv[2]) {
+	console.log()
+	console.log()
+	console.log()
+	console.log('                      Play it online at '+chalk.bold.cyan(process.argv[2]))
+}
 console.log()
